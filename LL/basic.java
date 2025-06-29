@@ -146,6 +146,42 @@ public class basic {
             return rv;
         }
     }
+    // 🔪 Yeh method list ke kisi bhi index se node hataata hai aur uska data return karta hai
+    public int removeAtIndex(int k) {
+        // 🧼 Step 1: Safety check (optional but good)
+        if (k < 0 || k >= size) {
+            throw new IndexOutOfBoundsException("Bhai index galat hai!");
+        }
+
+        // 🥇 Agar first index hai toh removeFirst use karo
+        if (k == 0) {
+            return removeFirst();
+        }
+        // 🏁 Agar last index hai toh removeLast use karo
+        else if (k == size - 1) {
+            return removeLast();
+        }
+        else {
+            // 🔍 k-1 index waale node pe gaye
+            Node k_1th = getNode(k - 1);
+
+            // 🎯 k-th node jise hataana hai
+            Node k_th = k_1th.next;
+
+            // ✂️ Link tod diya: k-1 ka next ab k+1 node ban gaya
+            k_1th.next = k_th.next;
+
+            // 🔗 Hataaye jaa rahe node ka next null kar diya (good practice)
+            k_th.next = null;
+
+            // 📉 Size ghataya
+            size--;
+
+            // 🔙 Hata hua data return kiya
+            return k_th.data;
+        }
+    }
+
 
 
     // 🧪 Test karne ke liye

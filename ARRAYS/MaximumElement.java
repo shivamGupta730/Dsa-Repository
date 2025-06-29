@@ -1,5 +1,7 @@
 package ARRAYS;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class MaximumElement {
     public static void main(String[] args) {
         int[]arr={3,4,1,2,3};
@@ -11,5 +13,6 @@ public class MaximumElement {
             }
         }
         System.out.println(max);
+
     }
 }

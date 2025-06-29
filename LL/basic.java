@@ -1,5 +1,5 @@
 package LL;
-
+// basic implementation
 // 📚 Apni khud ki Linked List class - naam rakha 'basic'
 public class basic {
 
